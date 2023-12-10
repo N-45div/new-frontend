@@ -15,4 +15,7 @@ body{
 margin: 0;
 }
 
-
+.component-box{
+  height:100px;
+  padding:90px;
+}

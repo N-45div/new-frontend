@@ -1,42 +1,24 @@
-import React from 'react'
+
+import { Link } from 'react-router-dom';
 import '../components/Navbar.css'
-
 import '@fortawesome/fontawesome-free/css/all.css';
-import LOGO from '../Images/LOGO.jpg'
-import { MdAccountBox } from "react-icons/md";
-
-
-
+import Connect from './ConnectButton';
 const Navbar = () => {
   return (
-    <nav>
-      <div className='nav_container' >
-
-        <ul className='nav_links'>
-          <li><a>PERSONAL LOAN</a></li>
-          <li><a>BUSINESS LOAN</a></li>
-          <li className='left'><a>INSTANT LOAN</a></li>
-
-          <li className='right'><a>SECURE LOAN</a></li>
-
-
-          <div className="account">
-            <div className="acl">
-            <MdAccountBox />
+      <nav>
+        <div className='nav_container'>
+          <ul className='nav_links'>
+            {/* New links */}
+            <li><Link to="/loan-application">Loan Application</Link></li>
+            <li><Link to="/loan-term-detail">Loan Term Detail</Link></li>
+            {/* Account options */}
+            <div className="account">
+            <Connect/>
             </div>
-            
-            <div className="options">
-              <span className="login-option">Login</span>
-              <span className="signup-option">Sign Up</span>
-            </div>
-          </div>
+          </ul>
+        </div>
+      </nav>
+  );
+};
 
-
-        </ul>
-
-      </div>
-    </nav>
-  )
-}
-
-export default Navbar
+export default Navbar;
